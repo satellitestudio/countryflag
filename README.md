@@ -1,0 +1,1 @@
+Returns an emoji flag or possible fallbacks for a given iso2 code
