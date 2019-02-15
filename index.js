@@ -2,7 +2,7 @@ import countries from './countries'
 import ifEmoji from 'if-emoji'
 
 const CODEPOINT_OFFSET = 127397
-const BASE_SVG_PATH_TEMPLATE = 'https://cdnjs.cloudflare.com/ajax/libs/flag-icon-css/latest/flags/4x3/{ISO2}.svg';
+const BASE_SVG_PATH_TEMPLATE = 'https://cdnjs.cloudflare.com/ajax/libs/flag-icon-css/3.2.1/flags/4x3/{iso2}.svg'
 
 // Well if Bhutan is supported I think we're good to go
 const supportsEmojiFlags = ifEmoji('🇧🇹')
@@ -23,7 +23,7 @@ const countryflag = _iso2 => {
     );
   }
 
-  const svg = BASE_SVG_PATH_TEMPLATE.replace('{ISO2}', iso2);
+  const svg = BASE_SVG_PATH_TEMPLATE.replace('{iso2}', iso2);
 
   return {
     emoji,
