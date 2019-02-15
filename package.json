@@ -1,7 +1,7 @@
 {
   "name": "countryflag",
   "description": "return an emoji flag or possible fallbacks for a given iso2 code",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "main": "index.js",
   "license": "MIT",
   "scripts": {
@@ -11,10 +11,10 @@
   "devDependencies": {
     "rollup": "^1.1.2",
     "rollup-plugin-commonjs": "^9.2.0",
-    "rollup-plugin-node-resolve": "^4.0.0",
-    "world-countries": "^2.1.0"
+    "rollup-plugin-node-resolve": "^4.0.0"
   },
   "dependencies": {
+    "world-countries": "^2.1.0",
     "if-emoji": "^0.1.0"
   }
 }
