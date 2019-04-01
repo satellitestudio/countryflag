@@ -25,6 +25,10 @@ const countryflag = iso => {
   } else {
     throw new Error(iso, ' is not an ISO 2 nor ISO 3 code')
   }
+  
+  if (country === undefined) {
+    throw new Error('Could not find a country corresponding to provided ISO:', iso)
+  }
 
   let emoji = null
 
