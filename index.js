@@ -5,8 +5,7 @@ const CODEPOINT_OFFSET = 127397
 const BASE_SVG_PATH_TEMPLATE = 'https://cdnjs.cloudflare.com/ajax/libs/flag-icon-css/3.2.1/flags/4x3/{iso2}.svg'
 
 // Well if Bhutan is supported I think we're good to go
-// const supportsEmojiFlags = ifEmoji('🇧🇹')
-const supportsEmojiFlags = true
+const supportsEmojiFlags = ifEmoji('🇧🇹')
 
 const countryflag = iso => {
   let iso2
@@ -25,7 +24,7 @@ const countryflag = iso => {
   } else {
     throw new Error(iso, ' is not an ISO 2 nor ISO 3 code')
   }
-  
+
   if (country === undefined) {
     throw new Error('Could not find a country corresponding to provided ISO:', iso)
   }
