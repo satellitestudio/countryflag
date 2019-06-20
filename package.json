@@ -6,7 +6,9 @@
   "license": "MIT",
   "scripts": {
     "postinstall": "./scripts/getCountries.js",
-    "dist": "rollup --config rollup.config.js --watch"
+    "build": "rollup --config rollup.config.js",
+    "prepublish": "yarn build",
+    "dev": "rollup --config rollup.config.js --watch"
   },
   "devDependencies": {
     "rollup": "^1.1.2",
