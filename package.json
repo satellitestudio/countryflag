@@ -1,7 +1,7 @@
 {
   "name": "countryflag",
   "description": "return an emoji flag or possible fallbacks for a given iso2 code",
-  "version": "2.3.2",
+  "version": "2.3.3",
   "main": "dist.js",
   "license": "MIT",
   "scripts": {
