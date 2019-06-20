@@ -1,6 +1,12 @@
 import countries from './countries'
 import ifEmoji from 'if-emoji'
 
+// IE polyfills
+import 'core-js/stable/string/from-code-point'
+import 'core-js/stable/string/code-point-at'
+import 'core-js/stable/string/repeat'
+import 'core-js/stable/array/find'
+
 const CODEPOINT_OFFSET = 127397
 const BASE_SVG_PATH_TEMPLATE = 'https://cdnjs.cloudflare.com/ajax/libs/flag-icon-css/3.2.1/flags/4x3/{iso2}.svg'
 
