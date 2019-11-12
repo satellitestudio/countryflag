@@ -7,7 +7,7 @@ const simpleCountries = countries.map(country => {
   return {
     ISO2: country.cca2,
     ISO3: country.cca3,
-    name: country.name.common
+    name: country.cca3 === 'TWN' ? 'Taiwan, Province of China' : country.name.common
   }
 })
 
