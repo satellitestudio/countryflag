@@ -13,14 +13,14 @@
     "dev": "rollup --config rollup.config.js --watch"
   },
   "devDependencies": {
-    "@satellitestudio/eslint-config": "^1.2.1",
-    "rollup": "^1.1.2",
-    "rollup-plugin-commonjs": "^9.2.0",
-    "rollup-plugin-node-resolve": "^4.0.0"
+    "@satellitestudio/eslint-config": "1.2.1",
+    "rollup": "1.1.2",
+    "rollup-plugin-commonjs": "9.2.0",
+    "rollup-plugin-node-resolve": "4.0.0"
   },
   "dependencies": {
-    "core-js": "^3.1.4",
-    "if-emoji": "^0.1.0",
-    "world-countries": "^2.1.0"
+    "core-js": "3.1.4",
+    "if-emoji": "0.1.0",
+    "world-countries": "4.0.0"
   }
 }
