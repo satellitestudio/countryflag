@@ -8,23 +8,23 @@ import 'core-js/stable/string/repeat'
 import 'core-js/stable/array/find'
 
 const CODEPOINT_OFFSET = 127397
-const BASE_SVG_PATH_TEMPLATE = 'https://cdnjs.cloudflare.com/ajax/libs/flag-icon-css/3.2.1/flags/4x3/{iso2}.svg'
+const BASE_SVG_PATH_TEMPLATE =
+  'https://cdnjs.cloudflare.com/ajax/libs/flag-icon-css/3.2.1/flags/4x3/{iso2}.svg'
 
 // Well if Bhutan is supported I think we're good to go
 const supportsEmojiFlags = ifEmoji('🇧🇹')
 
-const countryflag = iso => {
+const countryflag = (iso) => {
   let iso2
   let ISO2
   let country
   if (iso.length === 2) {
     iso2 = iso.toLowerCase()
     ISO2 = iso2.toUpperCase()
-    country = countries.find(c => c.ISO2 === ISO2)
-  }
-  else if (iso.length === 3) {
+    country = countries.find((c) => c.ISO2 === ISO2)
+  } else if (iso.length === 3) {
     const ISO3 = iso.toUpperCase()
-    country = countries.find(c => c.ISO3 === ISO3)
+    country = countries.find((c) => c.ISO3 === ISO3)
     ISO2 = country.ISO2
     iso2 = ISO2.toLowerCase()
   } else {
@@ -43,14 +43,14 @@ const countryflag = iso => {
       // both letters combined should return an emoji
       ISO2.codePointAt(0) + CODEPOINT_OFFSET,
       ISO2.codePointAt(1) + CODEPOINT_OFFSET
-    );
+    )
   }
 
-  const svg = BASE_SVG_PATH_TEMPLATE.replace('{iso2}', iso2);
+  const svg = BASE_SVG_PATH_TEMPLATE.replace('{iso2}', iso2)
   return {
     emoji,
     svg,
-    name: country.name
+    name: country.name,
   }
 }
 
