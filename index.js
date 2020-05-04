@@ -22,17 +22,20 @@ const countryflag = (iso) => {
     iso2 = iso.toLowerCase()
     ISO2 = iso2.toUpperCase()
     country = countries.find((c) => c.ISO2 === ISO2)
+    if (country === undefined) {
+      throw new Error('Could not find a country corresponding to provided ISO:', iso)
+    }
+
   } else if (iso.length === 3) {
     const ISO3 = iso.toUpperCase()
     country = countries.find((c) => c.ISO3 === ISO3)
+    if (country === undefined) {
+      throw new Error('Could not find a country corresponding to provided ISO:', iso)
+    }
     ISO2 = country.ISO2
     iso2 = ISO2.toLowerCase()
   } else {
     throw new Error(iso, ' is not an ISO 2 nor ISO 3 code')
-  }
-
-  if (country === undefined) {
-    throw new Error('Could not find a country corresponding to provided ISO:', iso)
   }
 
   let emoji = null
