@@ -7,9 +7,10 @@
   "browser": "dist/index.umd.js",
   "license": "MIT",
   "scripts": {
-    "postinstall": "./scripts/getCountries.js",
+    "get-countries": "./scripts/getCountries.js",
+    "postinstall": "yarn get-countries",
     "build": "rollup --config rollup.config.js",
-    "prepublish": "yarn build",
+    "prepublish": "yarn get-countries && yarn build",
     "dev": "rollup --config rollup.config.js --watch"
   },
   "devDependencies": {
