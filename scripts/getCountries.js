@@ -6,7 +6,7 @@ const countries = require('world-countries/countries.json')
 const simpleCountries = countries.map((country) => {
   return {
     ISO2: country.cca2,
-    ISO3: country.cca3,
+    ISO3: country.cca3 === 'TWN' ? 'TAI' : country.cca3,
     name: country.cca3 === 'TWN' ? 'Chinese Taipei' : country.name.common,
   }
 })
