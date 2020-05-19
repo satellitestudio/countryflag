@@ -1,15 +1,22 @@
-import resolve from 'rollup-plugin-node-resolve';
-import commonjs from 'rollup-plugin-commonjs';
-import pkg from './package.json';
+import typescript from '@rollup/plugin-typescript'
+import resolve from '@rollup/plugin-node-resolve'
+import commonjs from '@rollup/plugin-commonjs'
+import { terser } from 'rollup-plugin-terser'
 
-export default [
+const isProduction = process.env.NODE_ENV === 'production'
+
+export default
   {
-    input: 'index.js',
+    input: 'index.ts',
     output: [
-      { file: pkg.browser, format: 'umd', name: 'countryflag' },
-      { file: pkg.main, format: 'cjs' },
-      { file: pkg.module, format: 'es' }
+      { dir: 'dist', format: 'es', sourcemap: true },
     ],
-    plugins: [ resolve(), commonjs() ]
+    plugins: [
+      commonjs(),
+      typescript({
+        sourceMap: true,
+      }),
+      resolve(),
+      isProduction && terser(),
+    ],
   }
-]

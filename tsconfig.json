@@ -1,0 +1,15 @@
+{
+  "compilerOptions": {
+    "target": "es5",
+    "module": "esnext",
+    "declaration": true,
+    "declarationMap": true,
+    "outDir": "dist",
+    "rootDir": "./",
+    "declarationDir": "dist/types",
+    "strict": true,
+    "removeComments": true,
+  },
+  "include": [ "./" ],
+  "exclude": ["node_modules"],
+}
