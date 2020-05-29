@@ -1,4 +1,4 @@
 node_modules
-countries.js
+countries.ts
 /dist
 yarn-error.log
