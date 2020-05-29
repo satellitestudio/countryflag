@@ -1,5 +1,6 @@
 import countries from './countries'
 import ifEmoji from 'if-emoji'
+import { TAIPEI } from './scripts/getCountries'
 
 // IE polyfills
 import 'core-js/stable/string/from-code-point'
@@ -39,7 +40,7 @@ const countryflag = (iso: string) => {
 
   let emoji = null
 
-  if (supportsEmojiFlags && ISO2) {
+  if (supportsEmojiFlags && ISO2 && ISO2 !== TAIPEI.ISO2) {
     const codePoint0 = ISO2!.codePointAt(0)
     const codePoint1 = ISO2!.codePointAt(1)
     if (codePoint0 && codePoint1) {
