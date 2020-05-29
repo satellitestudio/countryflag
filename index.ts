@@ -40,26 +40,25 @@ const countryflag = (iso: string) => {
 
   let emoji = null
 
-  if (supportsEmojiFlags && ISO2) {
-    if (ISO2 === TAIPEI.ISO2) {
-      emoji = '🏳️'
-    } else {
-      const codePoint0 = ISO2!.codePointAt(0)
-      const codePoint1 = ISO2!.codePointAt(1)
-      if (codePoint0 && codePoint1) {
-        emoji = String.fromCodePoint(
-          // maps a capital letter A with the character 🇦
-          // both letters combined should return an emoji
-          codePoint0 + CODEPOINT_OFFSET,
-          codePoint1 + CODEPOINT_OFFSET
-        )
-      }
+  if (supportsEmojiFlags && ISO2 && ISO2 !== TAIPEI.ISO2) {
+    const codePoint0 = ISO2!.codePointAt(0)
+    const codePoint1 = ISO2!.codePointAt(1)
+    if (codePoint0 && codePoint1) {
+      emoji = String.fromCodePoint(
+        // maps a capital letter A with the character 🇦
+        // both letters combined should return an emoji
+        codePoint0 + CODEPOINT_OFFSET,
+        codePoint1 + CODEPOINT_OFFSET
+      )
     }
   }
 
-  const svg = ISO2 === TAIPEI.ISO2
-      ? 'https://raw.githubusercontent.com/satellitestudio/countryflag/master/empty-flag.svg'
-      : BASE_SVG_PATH_TEMPLATE.replace('{iso2}', iso2)
+  let svg = BASE_SVG_PATH_TEMPLATE.replace('{iso2}', iso2)
+  if (ISO2 === TAIPEI.ISO2) {
+    svg = supportsEmojiFlags
+      ? 'https://raw.githubusercontent.com/satellitestudio/countryflag/master/empty-flag.png'
+      : 'https://raw.githubusercontent.com/satellitestudio/countryflag/master/empty-flag.svg'
+  }
 
   return {
     emoji,
