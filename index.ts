@@ -1,6 +1,6 @@
 import countries from './countries'
 import ifEmoji from 'if-emoji'
-import { TAIPEI } from './scripts/getCountries'
+import { TAIPEI } from './constants'
 
 // IE polyfills
 import 'core-js/stable/string/from-code-point'
