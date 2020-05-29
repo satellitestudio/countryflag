@@ -1,5 +1,5 @@
 import type { Country } from 'world-countries/index'
-export const TAIPEI = { ISO2: 'CT', ISO3: 'TAI', name: 'Chinese Taipei' }
+import { TAIPEI } from '../index'
 
 const countries: Country[] = require('world-countries/countries.json')
 const simpleCountries = countries.map((country) => {

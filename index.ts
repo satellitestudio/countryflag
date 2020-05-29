@@ -1,6 +1,6 @@
 import countries from './countries'
 import ifEmoji from 'if-emoji'
-import { TAIPEI } from './scripts/getCountries'
+export const TAIPEI = { ISO2: 'CT', ISO3: 'TAI', name: 'Chinese Taipei' }
 
 // IE polyfills
 import 'core-js/stable/string/from-code-point'
