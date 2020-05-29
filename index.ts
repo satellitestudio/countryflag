@@ -41,8 +41,8 @@ const countryflag = (iso: string) => {
   let emoji = null
 
   if (supportsEmojiFlags && ISO2) {
-    if (ISO2 !== TAIPEI.ISO2) {
-      emoji = ' '
+    if (ISO2 === TAIPEI.ISO2) {
+      emoji = '🏳️'
     } else {
       const codePoint0 = ISO2!.codePointAt(0)
       const codePoint1 = ISO2!.codePointAt(1)
@@ -57,7 +57,10 @@ const countryflag = (iso: string) => {
     }
   }
 
-  const svg = BASE_SVG_PATH_TEMPLATE.replace('{iso2}', iso2)
+  const svg = ISO2 === TAIPEI.ISO2
+      ? 'https://raw.githubusercontent.com/satellitestudio/countryflag/master/empty-flag.svg'
+      : BASE_SVG_PATH_TEMPLATE.replace('{iso2}', iso2)
+
   return {
     emoji,
     svg,
