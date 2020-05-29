@@ -6,11 +6,10 @@
   "typings": "dist/types/index.d.ts",
   "license": "MIT",
   "scripts": {
-    "get-countries": "ts-node -P ./scripts/tsconfig.tsnode.json ./scripts/getCountries.ts",
-    "postinstall": "yarn get-countries",
+    "generate-countries": "ts-node -P ./scripts/tsconfig.tsnode.json ./scripts/getCountries.ts",
     "clean": "rimraf dist/*",
     "build": "cross-env NODE_ENV=production rollup --config rollup.config.js",
-    "prepublish": "yarn get-countries && yarn clean && yarn build",
+    "prepublish": "yarn generate-countries && yarn clean && yarn build",
     "dev": "rollup --config rollup.config.js --watch"
   },
   "devDependencies": {
