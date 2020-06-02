@@ -56,8 +56,8 @@ const countryflag = (iso: string) => {
   let svg = BASE_SVG_PATH_TEMPLATE.replace('{iso2}', iso2)
   if (ISO2 === TAIPEI.ISO2) {
     svg = supportsEmojiFlags
-      ? 'https://raw.githubusercontent.com/satellitestudio/countryflag/master/empty-flag.png'
-      : 'https://raw.githubusercontent.com/satellitestudio/countryflag/master/empty-flag.svg'
+      ? 'https://raw.githubusercontent.com/satellitestudio/countryflag/master/no-flag.png'
+      : 'https://raw.githubusercontent.com/satellitestudio/countryflag/master/no-flag.svg'
   }
 
   return {
