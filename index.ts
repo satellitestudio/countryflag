@@ -53,12 +53,9 @@ const countryflag = (iso: string) => {
     }
   }
 
-  let svg = BASE_SVG_PATH_TEMPLATE.replace('{iso2}', iso2)
-  if (ISO2 === TAIPEI.ISO2) {
-    svg = supportsEmojiFlags
-      ? 'https://raw.githubusercontent.com/satellitestudio/countryflag/master/no-flag.png'
-      : 'https://raw.githubusercontent.com/satellitestudio/countryflag/master/no-flag.svg'
-  }
+  let svg = ISO2 === TAIPEI.ISO2
+    ? 'data:image/svg+xml;charset=UTF-8,<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20"> <path fill="none" fill-opacity="0" fill-rule="evenodd" d="M0 0h20v20H0z"/></svg>'
+    : BASE_SVG_PATH_TEMPLATE.replace('{iso2}', iso2)
 
   return {
     emoji,

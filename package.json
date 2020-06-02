@@ -9,7 +9,7 @@
     "generate-countries": "ts-node -P ./scripts/tsconfig.tsnode.json ./scripts/getCountries.ts",
     "clean": "rimraf dist/*",
     "build": "cross-env NODE_ENV=production rollup --config rollup.config.js",
-    "prepublish": "yarn generate-countries && yarn clean && yarn build",
+    "prepublishOnly": "yarn generate-countries && yarn clean && yarn build",
     "dev": "rollup --config rollup.config.js --watch"
   },
   "devDependencies": {
