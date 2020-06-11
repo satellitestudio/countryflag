@@ -1,6 +1,6 @@
 import countries from './countries'
 import ifEmoji from 'if-emoji'
-import { TAIPEI } from './constants'
+import { TAIPEI, TAIWAN_ISO_2 } from './constants'
 
 // IE polyfills
 import 'core-js/stable/string/from-code-point'
@@ -40,9 +40,9 @@ const countryflag = (iso: string) => {
 
   let emoji = null
 
-  if (supportsEmojiFlags && ISO2 && ISO2 !== TAIPEI.ISO2) {
-    const codePoint0 = ISO2!.codePointAt(0)
-    const codePoint1 = ISO2!.codePointAt(1)
+  if (supportsEmojiFlags && ISO2) {
+    const codePoint0 = ISO2 === TAIPEI.ISO2 ? TAIWAN_ISO_2.codePointAt(0) : ISO2!.codePointAt(0)
+    const codePoint1 = ISO2 === TAIPEI.ISO2? TAIWAN_ISO_2.codePointAt(1) : ISO2!.codePointAt(1)
     if (codePoint0 && codePoint1) {
       emoji = String.fromCodePoint(
         // maps a capital letter A with the character 🇦
@@ -54,7 +54,7 @@ const countryflag = (iso: string) => {
   }
 
   let svg = ISO2 === TAIPEI.ISO2
-    ? 'data:image/svg+xml;charset=UTF-8,<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20"> <path fill="none" fill-opacity="0" fill-rule="evenodd" d="M0 0h20v20H0z"/></svg>'
+    ? BASE_SVG_PATH_TEMPLATE.replace('{iso2}', TAIWAN_ISO_2)
     : BASE_SVG_PATH_TEMPLATE.replace('{iso2}', iso2)
 
   return {
