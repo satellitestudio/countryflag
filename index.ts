@@ -54,7 +54,7 @@ const countryflag = (iso: string) => {
   }
 
   let svg = ISO2 === TAIPEI.ISO2
-    ? BASE_SVG_PATH_TEMPLATE.replace('{iso2}', TAIWAN_ISO_2)
+    ? BASE_SVG_PATH_TEMPLATE.replace('{iso2}', TAIWAN_ISO_2.toLowerCase())
     : BASE_SVG_PATH_TEMPLATE.replace('{iso2}', iso2)
 
   return {
