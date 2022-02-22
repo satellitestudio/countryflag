@@ -6,10 +6,10 @@
     "declarationMap": true,
     "outDir": "dist",
     "rootDir": "./",
-    "declarationDir": "dist/types",
+    "declarationDir": "dist",
     "strict": true,
     "removeComments": true,
   },
   "include": [ "./" ],
-  "exclude": ["node_modules"],
+  "exclude": ["node_modules", "scripts"],
 }
