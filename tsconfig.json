@@ -8,8 +8,8 @@
     "rootDir": "./",
     "declarationDir": "dist",
     "strict": true,
-    "removeComments": true,
+    "removeComments": true
   },
-  "include": [ "./" ],
-  "exclude": ["node_modules", "scripts"],
+  "include": ["./"],
+  "exclude": ["node_modules", "scripts"]
 }
